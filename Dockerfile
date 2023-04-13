@@ -20,7 +20,7 @@ RUN mkdir /build
 COPY . /build/
 
 WORKDIR /build
-RUN /root/.local/bin/poetry build
+RUN poetry build
 
 WORKDIR /build/dist
 RUN dpkg-buildpackage -us -uc
