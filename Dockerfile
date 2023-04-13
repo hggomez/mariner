@@ -21,6 +21,7 @@ COPY . /build/
 
 WORKDIR /build
 RUN python3 /root/.local/bin/poetry build
+RUN python3 /root/.local/bin/poetry self update
 
 WORKDIR /build/dist
 RUN dpkg-buildpackage -us -uc
